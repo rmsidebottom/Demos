@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Demo Coins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+	    
+	<h1>Welcome!</h1>
+        <br>
+        {% if username %}
+	<p class="notification">Hi {{ username }}, you have {{ coin }} coins 
+	for trading.</p>
+        {% endif %}
+        
+	{% if debt %}
+	<p class="error">Hi {{ username }}, you are in debt. Please break even
+	before trading coins.</p>
+        {% endif %}
+
+	{% if transfer %}
+		<p>You successfully transfered {{ tCoins }} to {{ tUser }} </p>
+	{% endif %}
+	<br>
+	<p>Feel free to send a friend coin to help them out!</p>
+	<form action="http://127.0.0.1:5000/transfer" method="POST">
+		<input type="text" placeholder="Username" name="username"
+			value="{{ request.form.username }}">
+		<input type="number" placeholder="Amount" name="amount" 
+			value="{{ request.form.amount }}">
+		<input class="btn btn-default" type="submit" value="Trade">
+	</form>
+
+        {% if friends %}
+		<p>Here are a list of your friends that you can send coins 
+		to!</p>
+		<ul>
+		{% for friend in friends %}
+			<li> {{ friend }} </li>
+		{% endfor %}
+		</ul>
+        {% endif %}
+    </div>
+  </body>
+</html>
