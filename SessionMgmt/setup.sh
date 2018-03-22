@@ -2,4 +2,6 @@
 
 sudo pip install virtualenv
 virtualenv SessionMgmt
-pip install -r requirements.txt
+SessionMgmt/bin/pip install -r requirements.txt
+
+SessionMgmt/bin/python app.py

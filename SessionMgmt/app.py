@@ -98,8 +98,4 @@ def transfer():
             return resp
 
 if __name__ == "__main__":
-    port = 5000
-    if len(sys.argv) > 1 and sys.argv[1]:
-        port = int(sys.argv[1])
-    app.run(debug=True, port=port)
-
+	app.run(host='0.0.0.0')
