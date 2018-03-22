@@ -1,4 +1,3 @@
 #!/bin/bash
 
-export FLASK_APP=app.py
-flask run
+SessionMgmt/bin/python app.py
