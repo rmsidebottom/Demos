@@ -29,6 +29,9 @@ def login():
         if cook == 'bob':
             resp = make_response(render_template('loggedIn.html', 
                 username=cook, friends=bobFriends, coin=coins[cook]))
+        elif cook == 'admin':
+            resp = make_response(render_template('loggedIn.html', 
+                username=cook))
         else:
             resp = make_response(render_template('loggedIn.html', 
                 username=cook, coin=coins[cook]))
@@ -72,8 +75,7 @@ def transfer():
         if cook == 'admin':
             coins[user] = coins[user] + amount
             resp = make_response(render_template('loggedIn.html', 
-                trasnfer=True, tCoins=amount, tUser=user, username=cook,
-                coins=coin[cook]))
+                trasnfer=True, tCoins=amount, tUser=user, username=cook))
             resp.set_cookie('username', cook)
             return resp
         elif coins[cook] >= 0:
