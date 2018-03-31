@@ -24,7 +24,7 @@
 	{% endif %}
 	<br>
 	<p>Feel free to send a friend coin to help them out!</p>
-	<form action="http://127.0.0.1:5000/transfer" method="POST">
+	<form action="/transfer" method="POST">
 		<input type="text" placeholder="Username" name="username"
 			value="{{ request.form.username }}">
 		<input type="number" placeholder="Amount" name="amount" 

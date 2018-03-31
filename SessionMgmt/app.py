@@ -100,4 +100,4 @@ def transfer():
             return resp
 
 if __name__ == "__main__":
-	app.run(host='0.0.0.0')
+	app.run(host='129.21.60.143')
