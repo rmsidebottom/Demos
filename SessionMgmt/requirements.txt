@@ -1,6 +1,6 @@
 Flask==1.0
 ipaddress==1.0.18
-py==1.4.32
+py==1.10.0
 requests==2.20.0
 urllib3==1.22
 virtualenv==15.1.0
